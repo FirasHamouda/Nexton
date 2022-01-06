@@ -1,6 +1,6 @@
 package com.nexton.nextonprojet.utils
 
-class  Constants {
+class Constants {
 
     companion object {
 

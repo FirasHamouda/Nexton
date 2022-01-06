@@ -18,8 +18,8 @@ class ApiServiceImpl : ApiService {
 
     override fun getPitch(detailLink: String): Single<DetailLink> {
         return Rx2AndroidNetworking.get(URLConstants.URL_PITCH + detailLink)
-                .build()
-                .getObjectSingle(DetailLink::class.java)
+            .build()
+            .getObjectSingle(DetailLink::class.java)
     }
 
 }

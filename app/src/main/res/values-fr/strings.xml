@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NextonProjet</string>
+    <string name="film_search_hint">Films, Series, Titres…</string>
+    <string name="pitch">Résumé :</string>
+    <string name="titre">Titre :</string>
+    <string name="episode">Episode</string>
+    <string name="availability">Disponibilité :</string>
+    <string name="action_ok">OK</string>
+    <string name="suggestion_hint">Suggestions</string>
+    <string name="home_hint">Que voulez vous regarder ?</string>
+    <string name="errorWebService">Un problème s\'est parvenu </string>
+    <string name="error">Oups ! Pas de résultat pour votre recherche !</string>
+    <string name="quit_application">Cliquez BACK une autre fois pour quitter l\'application !</string>
+</resources>

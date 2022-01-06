@@ -5,12 +5,12 @@ import com.google.gson.annotations.SerializedName
 
 data class DetailLink(
         @Nullable @SerializedName("template")
-        val template : String,
+        val template: String,
         @Nullable @SerializedName("parentalrating")
-        val parentalrating : Int,
+        val parentalrating: Int,
         @Nullable @SerializedName("categoryID")
-        val categoryID : Int,
+        val categoryID: Int,
         @Nullable @SerializedName("contents")
-        val contents : Contents
+        val contents: Contents
 
 )

@@ -17,23 +17,23 @@
             android:id="@+id/history_content"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:layout_below="@+id/header"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="15dp"
+            android:background="@drawable/title_shape"
+            android:maxLines="1"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:maxLines="1"
             android:textColor="@color/colorSecondaryText"
-            android:background="@drawable/title_shape"
-            android:layout_below="@+id/header"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
 
         <LinearLayout
             android:id="@+id/film_img_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_below="@+id/header"
+            android:layout_centerInParent="true"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -41,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:padding="10dp"
                 android:layout_marginTop="25dp"
+                android:padding="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_film"
                 android:visibility="visible" />

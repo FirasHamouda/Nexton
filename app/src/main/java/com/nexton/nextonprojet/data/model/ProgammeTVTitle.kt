@@ -7,7 +7,7 @@ class ProgammeTVTitle {
 
     @Nullable
     @SerializedName("color")
-    val color: String =""
+    val color: String = ""
 
     @Nullable
     @SerializedName("type")

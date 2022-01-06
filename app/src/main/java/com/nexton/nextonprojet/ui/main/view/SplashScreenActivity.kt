@@ -28,7 +28,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
 
     /**
-     * disable back button in splach screen
+     * disable back button in splash screen
      */
     override fun onBackPressed() {
         //do nothing

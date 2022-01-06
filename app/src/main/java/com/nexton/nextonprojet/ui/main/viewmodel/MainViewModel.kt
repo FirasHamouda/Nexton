@@ -17,46 +17,42 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-            /**
-             * fetch programme TV
-             */
-             fun fetchProgrammeTv(key : String) {
-                 programmeTvLiveData.postValue(Resource.loading(null))
-                compositeDisposable.add(
-                    mainRepository.getProgrammeTV(key)
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({ programmetvList ->
-                            programmeTvLiveData.postValue(Resource.success(programmetvList))
-                        }, {
-                           // Nothing to do
-                        })
-                )
-            }
+    /**
+     * fetch programme TV
+     */
+    fun fetchProgrammeTv(key: String) {
+        programmeTvLiveData.postValue(Resource.loading(null))
+        compositeDisposable.add(
+            mainRepository.getProgrammeTV(key)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ programmetvList ->
+                    programmeTvLiveData.postValue(Resource.success(programmetvList))
+                }, {
+                    // Nothing to do
+                })
+        )
+    }
 
-            /**
-             * fetch programme's detail
-             */
-               fun fetchDetail(detailLink : String) {
-                   contentsLiveData.postValue(Resource.loading(null))
-                    compositeDisposable.add(
-                            mainRepository.getPitch(detailLink)
-                                    .subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribe({ pitchtvList ->
-                                        contentsLiveData.postValue(Resource.success(pitchtvList))
-                                    }, {
-                                        // Nothing to do
-                                    })
-                    )
-                }
+    /**
+     * fetch programme's detail
+     */
+    fun fetchDetail(detailLink: String) {
+        contentsLiveData.postValue(Resource.loading(null))
+        compositeDisposable.add(
+            mainRepository.getPitch(detailLink)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ pitchtvList ->
+                    contentsLiveData.postValue(Resource.success(pitchtvList))
+                }, {
+                    // Nothing to do
+                })
+        )
+    }
 
-
-
-            override fun onCleared() {
-                super.onCleared()
-                compositeDisposable.dispose()
-            }
-
-
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.dispose()
+    }
 }

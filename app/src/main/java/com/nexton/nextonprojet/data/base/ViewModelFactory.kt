@@ -6,7 +6,7 @@ import com.nexton.nextonprojet.data.api.ApiHelper
 import com.nexton.nextonprojet.data.repository.MainRepository
 import com.nexton.nextonprojet.ui.main.viewmodel.MainViewModel
 
-class ViewModelFactory (private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
+class ViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {

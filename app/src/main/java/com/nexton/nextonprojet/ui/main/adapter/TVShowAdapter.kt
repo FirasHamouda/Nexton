@@ -1,7 +1,6 @@
 package com.nexton.nextonprojet.ui.main.adapter
 
 import android.app.Activity
-import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
@@ -19,9 +18,10 @@ import com.nexton.nextonprojet.utils.Constants
 import com.nexton.nextonprojet.utils.URLConstants.Companion.BASE_URL
 
 
-class TVShowAdapter(private var mTvShowList: ArrayList<ProgrammeTvItems>, var activity: Activity) : BaseAdapter(){
+class TVShowAdapter(private var mTvShowList: ArrayList<ProgrammeTvItems>, var activity: Activity) :
+    BaseAdapter() {
 
-    lateinit var sharedPrefs : SharedPreferences
+    lateinit var sharedPrefs: SharedPreferences
 
     private val url = BASE_URL
 
@@ -41,7 +41,7 @@ class TVShowAdapter(private var mTvShowList: ArrayList<ProgrammeTvItems>, var ac
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view : View = View.inflate(activity, R.layout.grid_row, null)
+        val view: View = View.inflate(activity, R.layout.grid_row,null)
 
 
         val txtFilm = view.findViewById<TextView>(R.id.title_film)
@@ -67,28 +67,31 @@ class TVShowAdapter(private var mTvShowList: ArrayList<ProgrammeTvItems>, var ac
             activity.startActivity(intent)
 
             //save title into shared Prefs
-            sharedPrefs = activity.getSharedPreferences(Constants.SHAREDPREFS , Context.MODE_PRIVATE)
+            sharedPrefs = activity.getSharedPreferences(Constants.SHAREDPREFS,MODE_PRIVATE)
             val editor = sharedPrefs.edit()
             editor?.putString(Constants.SHAREDPREFS, mTvShowList[position].title[0].value)
             editor?.apply()
 
 
-            Log.i(TAG, "Title "+mTvShowList[position].title[0].value+" saved in sahred Preferences")
+            Log.i(
+                TAG,
+                "Title " + mTvShowList[position].title[0].value + " saved in shared Preferences"
+            )
 
         }
 
         return view
     }
 
-        /**
-         * Set data into the list
-         */
-        fun setData(list: List<ProgrammeTvItems>) {
-            mTvShowList.clear()
-            mTvShowList.addAll(list)
-            notifyDataSetChanged()
+    /**
+     * Set data into the list
+     */
+    fun setData(list: List<ProgrammeTvItems>) {
+        mTvShowList.clear()
+        mTvShowList.addAll(list)
+        notifyDataSetChanged()
 
-            Log.i(TAG, "TV show list : $mTvShowList")
+        Log.i(TAG, "TV show list : $mTvShowList")
 
-        }
+    }
 }

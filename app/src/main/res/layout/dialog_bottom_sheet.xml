@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorSecondaryText"
+    android:orientation="vertical"
     android:padding="20dp">
 
     <TextView
@@ -18,10 +18,10 @@
         android:id="@+id/dialog_img_episode"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@drawable/img_no_film"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_no_film" />
 
     <RelativeLayout
         android:id="@+id/dialog_bottom_sheet_content"
@@ -32,48 +32,48 @@
             android:id="@+id/dialog_availability_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:lines="1"
+            android:text="@string/availability"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:lines="1"
-            android:textStyle="bold"
-            android:text="@string/availability"
-            android:layout_margin="7dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/dialog_availability"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:lines="1"
+            android:layout_alignBottom="@+id/dialog_availability_txt"
             android:layout_toEndOf="@+id/dialog_availability_txt"
-            android:layout_alignBottom="@+id/dialog_availability_txt"/>
+            android:lines="1"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
 
         <TextView
             android:id="@+id/pitch_episode_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_availability_txt"
+            android:layout_margin="7dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/pitch"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:lines="1"
-            android:textStyle="bold"
-            android:ellipsize="end"
-            android:text="@string/pitch"
-            android:layout_below="@+id/dialog_availability_txt"
-            android:layout_margin="7dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/dialog_pitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:lines="3"
-            android:ellipsize="end"
-            android:layout_toEndOf="@+id/pitch_episode_txt"
             android:layout_alignTop="@+id/pitch_episode_txt"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/pitch_episode_txt"
+            android:ellipsize="end"
+            android:lines="3"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 

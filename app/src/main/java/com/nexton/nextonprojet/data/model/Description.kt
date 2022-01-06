@@ -5,6 +5,6 @@ import androidx.annotation.Nullable
 import com.google.gson.annotations.SerializedName
 
 data class Description(
-        @Nullable @SerializedName("description") val description : List<String>
+        @Nullable @SerializedName("description") val description: List<String>
 
 )
